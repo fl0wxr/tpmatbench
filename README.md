@@ -2,7 +2,7 @@
 
 ## Objective
 
-TPMATBench is a Python benchmark that measures CPU and GPU 64-bit floating-point throughput (GFLOPS) using dense matrix multiplication. It is designed to stress-test a digital computer with a primitive matrix algebra operation.
+TPMATBench is a Python benchmark that measures CPU and GPU throughput (GFLOPS) using dense FP32 matrix multiplication. It is designed to stress-test a digital computer with a primitive matrix algebra operation.
 
 ## Deployment
 

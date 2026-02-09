@@ -132,7 +132,7 @@ if __name__ == "__main__":
     description="\
 tpmatbench -- Matrix Algebra Throughput Benchmarking Utility.\n\
 \n\
-Description: Return FLOPs of current machine after stress testing it using a primitive matrix algebra operation.\n\
+Description: Return FLOPs of current machine after stress testing it using a primitive FP32 matrix algebra operation.\n\
 The end-user must ensure that all threads are utilized together for at least 1 minute for an accurate measurement. \
 If it takes too long to complete, then interrupt it and use the --acceleration argument appropriately.\
     ",
