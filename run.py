@@ -62,8 +62,8 @@ def operand_size(free_mem: int, acceleration_factor: float = 1) -> int:
   benchmark_factor = 0.8  # Fraction of memory that will be used by default; the rest is used as a margin for the system's dynamic overhead.
   usable_bytes = free_mem * benchmark_factor
 
-  # 3 -> 3 matrices (operand plus output); 8 bytes (float 64 bit) per operand element.
-  n = int((usable_bytes / (3 * 8)) ** 0.5 / acceleration_factor)
+  # 3 -> 3 matrices (operand plus output); 4 bytes (float 32 bit) per operand element.
+  n = int((usable_bytes / (3 * 4)) ** 0.5 / acceleration_factor)
   
   return n
 
@@ -78,8 +78,8 @@ def benchmark_cpu(n: int):
 
   print(f"CPU Benchmark\nOperation scale: {n}")
 
-  A = np.random.rand(n, n)
-  B = np.random.rand(n, n)
+  A = np.random.rand(n, n).astype(np.float32)
+  B = np.random.rand(n, n).astype(np.float32)
 
   # Warm-up.
   _ = A @ B
@@ -106,8 +106,8 @@ def benchmark_gpu(n: int):
 
   print(f"GPU Benchmark\nOperation scale: {n}")
 
-  A = cp.random.rand(n, n, dtype=cp.float64)
-  B = cp.random.rand(n, n, dtype=cp.float64)
+  A = cp.random.rand(n, n, dtype=cp.float32)
+  B = cp.random.rand(n, n, dtype=cp.float32)
 
   # Warm-up.
   _ = A @ B
