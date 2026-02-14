@@ -16,7 +16,8 @@ Navigate inside the project directory and understand the simple instructions giv
 
 - Measures approximate GFLOPS for square matrix multiplication.
 - Supports CPU (NumPy) and GPU (CuPy) if available.
-- Configurable matrix size, and acceleration factor.
+- Configurable acceleration parameter that controls the operand matrix size.
+- Configurable floating point precision of the operand matrix element.
 
 ## Requirements
 
