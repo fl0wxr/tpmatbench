@@ -49,10 +49,10 @@ def operand_size(precision: int, free_mem: int, acceleration_factor: float = 1) 
   Description:
     Compute the operands' sizes based on free memory.
 
-  Parameters:
+  Parameter:
     `precision` -- Type int. Domain in {32, 64}. Precision of floating point numbers of benchmark operands in bits.
     `free_mem` -- Type int. Available memory in bytes.
-    `acceleration_factor` -- Type float. Higher values lead to lower n for a lower amount of benchmark computations (relative to available/free memory). Conversely, lower values lead to a higher amount of benchmark computations. Its default parameter is set to 1, making the matrices 
+    `acceleration_factor` -- Type float. Higher values lead to lower n for a lower amount of benchmark computations (relative to available/free memory). Conversely, lower values lead to a higher amount of benchmark computations. Default parameter is set to 1.
 
   Returns:
     `n` -- Type int. The sizes of the square operand matrices.
@@ -149,11 +149,11 @@ Description: Return FLOPs of current machine after stress testing it using a pri
 The end-user must ensure that all threads are utilized together for at least 1 minute for an accurate measurement. \
 If it takes too long to complete, then interrupt it and use the --acceleration argument appropriately.\
     ",
-    formatter_class=argparse.RawTextHelpFormatter  # Preserve newline characters in stdout of --help.
+    formatter_class=argparse.RawTextHelpFormatter  # Preserve newline characters in stdout of `--help`.
 )
-  parser.add_argument("--device", choices=["cpu", "gpu"], default="cpu", help='Choose "cpu" for NumPy or "gpu" for CuPy.')
+  parser.add_argument("--device", choices=["cpu", "gpu"], default="cpu", help='Choose "cpu" for NumPy or "gpu" for CuPy. Default parameter is set to "cpu".')
   parser.add_argument("--precision", type=int, default=32, choices=[32, 64], help="Default Precision of floating point numbers of benchmark operands in bits. Default parameter is set to 32 .")
-  parser.add_argument("--acceleration", type=float, default=1.0, help="Increase if the runtime takes an excessive amount of time (this will shorten the runtime); otherwise decrease.")
+  parser.add_argument("--acceleration", type=float, default=1.0, help="Increase if the runtime takes an excessive amount of time (this will shorten the runtime); otherwise decrease. Default parameter is set to 1.0 .")
   args = parser.parse_args()
 
   assert parser.acceleration > 0, "E: Acceleration factor must be a positive number."
