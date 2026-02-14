@@ -143,7 +143,7 @@ if __name__ == "__main__":
 
   parser = argparse.ArgumentParser(
     description="\
-tpmatbench -- Matrix Algebra Throughput Benchmarking Utility.\n\
+tpmatbench: Matrix Algebra Throughput Benchmarking Utility.\n\
 \n\
 Description: Return FLOPs of current machine after stress testing it using a primitive FP32 matrix algebra operation.\n\
 The end-user must ensure that all threads are utilized together for at least 1 minute for an accurate measurement. \
