@@ -58,8 +58,6 @@ def operand_size(precision: int, free_mem: int, acceleration_factor: float = 1) 
     `n` -- Type int. The sizes of the square operand matrices.
   """
 
-  assert acceleration_factor > 0, "E: Acceleration factor must be a positive number."
-
   benchmark_factor = 0.8  # Fraction of memory that will be used by default; the rest is used as a margin for the system's dynamic overhead.
   usable_bytes = free_mem * benchmark_factor
 
@@ -157,6 +155,8 @@ If it takes too long to complete, then interrupt it and use the --acceleration a
   parser.add_argument("--precision", type=int, default=32, choices=[32, 64], help="Default Precision of floating point numbers of benchmark operands in bits. Default parameter is set to 32 .")
   parser.add_argument("--acceleration", type=float, default=1.0, help="Increase if the runtime takes an excessive amount of time (this will shorten the runtime); otherwise decrease.")
   args = parser.parse_args()
+
+  assert parser.acceleration > 0, "E: Acceleration factor must be a positive number."
 
   if args.device == "gpu":
 
