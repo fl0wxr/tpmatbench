@@ -12,6 +12,8 @@ Simply `git clone` this project.
 
 Navigate inside the project directory and understand the simple instructions given in `python3 run.py --help` for proper usage.
 
+Warning: It is advised to shut down any non-essential process that uses resources (volatile memory and processing power).
+
 ## Features
 
 - Measures approximate GFLOPS for square matrix multiplication.
