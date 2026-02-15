@@ -1,4 +1,4 @@
-# TPMATBench: Throughput Matrix Algebra Benchmarking Utility
+# TPMATBench: Throughput Matrix Algebra Benchmarking Tool
 
 ## Objective
 
