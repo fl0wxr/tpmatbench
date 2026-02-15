@@ -156,7 +156,7 @@ If it takes too long to complete, then interrupt it and use the --acceleration a
   parser.add_argument("--acceleration", type=float, default=1.0, help="Increase if the runtime takes an excessive amount of time (this will shorten the runtime); otherwise decrease. Default parameter is set to 1.0 .")
   args = parser.parse_args()
 
-  assert parser.acceleration > 0, "E: Acceleration factor must be a positive number."
+  assert args.acceleration > 0, "E: Acceleration factor must be a positive number."
 
   if args.device == "gpu":
 
