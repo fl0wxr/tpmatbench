@@ -162,14 +162,14 @@ If it takes too long to complete, then interrupt it and use the --acceleration a
 
     import cupy as cp
 
-    free_mem = available_vram(precision=args.precision)
-    n = operand_size(free_mem=free_mem, acceleration_factor=args.acceleration)
+    free_mem = available_vram()
+    n = operand_size(precision=args.precision, free_mem=free_mem, acceleration_factor=args.acceleration)
     benchmark_gpu(n=n, precision=args.precision)
 
   else:
 
     import numpy as np
 
-    free_mem = available_ram(precision=args.precision)
-    n = operand_size(free_mem=free_mem, acceleration_factor=args.acceleration)
+    free_mem = available_ram()
+    n = operand_size(precision=args.precision, free_mem=free_mem, acceleration_factor=args.acceleration)
     benchmark_cpu(n=n, precision=args.precision)
