@@ -10,7 +10,7 @@ Simply `git clone` this project.
 
 ## Usage
 
-Navigate inside the project directory and understand the simple instructions given in `python3 run.py --help` for proper usage.
+Navigate inside the project directory and understand the simple instructions given in `python3 run.py --help` for proper usage. The end-user must ensure that all threads are utilized together for at least 1 minute for an accurate measurement.
 
 Warning: It is advised to shut down any non-essential process that uses resources (volatile memory and processing power).
 
