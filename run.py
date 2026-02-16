@@ -117,7 +117,7 @@ def benchmark_gpu(n: int, precision: int):
   else:
     dtype = cp.float64
 
-  print(f"GPU Benchmark\nOperation scale: {n}\nOperands precision: {dtype} bits")
+  print(f"GPU Benchmark\nOperation scale: {n}\nOperands precision: {precision} bits")
 
   A = cp.random.rand(n, n, dtype=dtype)
   B = cp.random.rand(n, n, dtype=dtype)
